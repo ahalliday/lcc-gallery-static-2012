@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Lismore Regional Gallery</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" media="all" href="style/base.css" /> <!-- master css -->
+<link type="text/css" rel="stylesheet" media="all" href="style/960.css" /> <!-- css for 960 grid system -->
+<link type="text/css" rel="stylesheet" media="all" href="style/superfish.css" /> <!-- CSS for Superfish Navigation -->
+<link type="text/css" rel="stylesheet" media="all" href="js/colorbox/colorbox.css" />	<!-- CSS for colorbox lightbox -->
+<!--[if IE]><style type="text/css">.clearfix{zoom:1;display:block;}</style><![endif]-->
+<!--[if IE 6]><style type="text/css" media="screen,tv,projection">@import 'style/ie_fix.css';</style><script src="js/ADxMenu.js" type="text/javascript"></script><![endif]-->
+<script type="text/javascript" src="//use.typekit.net/rrv1cnj.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/superfish.js"></script>
+<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+<script type="text/javascript" src="js/colorbox/jquery.colorbox-min.js"></script>
+<script type="text/javascript" src="js/jQuery.BlackAndWhite.min.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){ 
+
+	$('#thumbs a').BlackAndWhite({
+		hoverEffect : true, // default true
+		// set the path to BnWWorker.js for a superfast implementation
+		webworkerPath : false,
+		// for the images with a fluid width and height 
+		responsive:true,
+		speed: { //this property could also be just speed: value for both fadeIn and fadeOut
+	        fadeIn: 0, // 200ms for fadeIn animations
+	        fadeOut: 0 // 800ms for fadeOut animations
+	    }
+	})
+	
+	//image slideshow
+	$('#slideshow').cycle({
+		fx:'fade',
+		timeout:0,
+		pager:  '#thumbs', 
+		pagerAnchorBuilder: function(idx, slide) { 
+			// return selector string for existing anchor 
+			return '#thumbs li:eq(' + idx + ') a'; 
+		},
+		activePagerClass:'active'
+	})
+	
+	//lightbox trigger for image and zoom button
+	$(".gallery").colorbox({rel: 'group1'});
+	$(".zoom").click(function() {
+	  var $galleylink = $(this).parent().prev();
+	  $galleylink.trigger('click');
+	  return false;
+	})
+});
+//]]>
+</script>
+</head>
+<body class="about">
+	<div class="container_12">
+		<div id="header" class="grid_12">
+			<h1 id="logo"><a href="#"><img width="313" height="58" alt="Lismore Regional Gallery" src="images/art/logo.gif" /></a></h1>
+		</div>
+		<div id="menu" class="clearfix grid_12">
+			<ul id="nav" class="sf-menu">
+				<li class="selected">
+					<a href="#">ABOUT</a>
+					<ul>
+						<li><a href="#">Who we are</a></li>
+						<li><a href="#">History</a></li>
+						<li><a href="#">News</a></li>
+						<li><a href="#">Patrons</a></li>
+						<li><a href="#">Friends of the Gallery</a></li>
+						<li><a href="#">Sponsors</a></li>
+						<li><a href="#">Publications</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">EXHIBITIONS</a>
+					<ul>
+						<li><a href="#">Current</a></li>
+						<li><a href="#">Upcoming</a></li>
+						<li><a href="#">Archive</a></li>
+						<li><a href="#">Offsite</a></li>
+						<li><a href="#">Northern Rivers Portrait Prize</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">EVENTS</a>
+					<ul>
+						<li><a href="#">Upcoming</a></li>
+						<li><a href="#">Kids programs</a></li>
+						<li><a href="#">Gallery after hours</a></li>
+						<li><a href="#">Splendid</a></li>
+						<li><a href="#">Room 40</a></li>
+						<li><a href="#">Archive</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">COLLECTION</a>
+					<ul>
+						<li><a href="#">Overview</a></li>
+						<li><a href="#">Gifting</a></li>
+						<li><a href="#">Collection search</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">LEARNING</a>
+					<ul>
+						<li><a href="#">Continuing learning</a></li>
+						<li><a href="#">Schools</a></li>
+						<li><a href="#">Teacher resources</a></li>
+						<li><a href="#">Kids programs</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">COMMUNITY</a>
+					<ul>
+						<li><a href="#">Friends of the Gallery</a></li>
+						<li><a href="#">Volunteering</a></li>
+						<li><a href="#">Arts Northern Rivers</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">VISIT</a>
+					<ul>
+						<li><a href="#">Location</a></li>
+						<li><a href="#">Café</a></li>
+						<li><a href="#">Accessibility</a></li>
+						<li><a href="#">Visit Lismore</a></li>
+					</ul>
+				</li>
+				<li><a href="#">CONTACT</a></li>
+			</ul>
+			<ul class="share">
+				<li class="youtube"><a href="#">Youtube</a></li>
+				<li class="facebook"><a href="#">Facebook</a></li>
+				<li class="twitter"><a href="#">Twitter</a></li>
+			</ul>
+		</div>
+		<div id="top" class="clearfix grid_12">
+			<p class="crumb"><a href="#">Home</a> > <a href="#">About</a> > History </p>
+			<form method="get" action="#" class="search">
+				<fieldset class="clearfix">
+					<input type="text" placeholder="Search" /><button>Search</button>
+				</fieldset>
+			</form>
+		</div>
+		<div id="content">
+			<div class="articles_list clearfix">
+				<div id="gallery" class="grid_6">
+					<div id="slideshow" class="pics">
+						<div class="item">
+							<a href="images/gallery/2.jpg" class="gallery" title="<h3><em>Survivor 1</em>, Dadang Christanto, 2009</h3><p>Performance at 4A Centre for Contemporary Asian Art, Sydney. Courtesy of the artist and 4A Centre for Contemporary Art, Sydney.<br>Image credit: Garry Trinh</p>"><img src="images/gallery/1.jpg" alt="Image 1" /></a>							
+							<div class="capt">
+								<h3>Survivor: Dadang Christanto (detail), 2009</h3>
+								<p>Performance at 4A Centre for Contemporary Asian Art, Sydney<br />Courtesy of the artist and 4A Centre for Contemporary Art, Sydney<br />Image: Garry Trinh</p>
+								<a href="#" class="zoom">Zoom</a>
+							</div>
+						</div>
+						<div class="item">
+							<a href="images/gallery/1.jpg" class="gallery" title="<h3><em>Survivor 2</em>, Dadang Christanto, 2009</h3><p>Performance at 4A Centre for Contemporary Asian Art, Sydney. Courtesy of the artist and 4A Centre for Contemporary Art, Sydney.<br>Image credit: Garry Trinh</p>"><img src="images/gallery/1.jpg" alt="Image 1" /></a>							
+							<div class="capt">
+								<h3>Lismore Regional Gallery forecourt 2</h3>
+								<p>Image credit: Rick Shearman 2</p>
+								<a href="#" class="zoom">Zoom</a>
+							</div>
+						</div>
+						<div class="item">
+							<a href="images/gallery/1.jpg" class="gallery" title="<h3><em>Survivor 3</em>, Dadang Christanto, 2009</h3><p>Performance at 4A Centre for Contemporary Asian Art, Sydney. Courtesy of the artist and 4A Centre for Contemporary Art, Sydney.<br>Image credit: Garry Trinh</p>"><img src="images/gallery/1.jpg" alt="Image 1" /></a>							
+							<div class="capt">
+								<h3>Lismore Regional Gallery forecourt 3</h3>
+								<p>Image credit: Rick Shearman 3</p>
+								<a href="#" class="zoom">Zoom</a>
+							</div>
+						</div>
+						<div class="item">
+							<a href="images/gallery/1.jpg" class="gallery" title="<h3><em>Survivor 2</em>, Dadang Christanto, 2009</h3><p>Performance at 4A Centre for Contemporary Asian Art, Sydney. Courtesy of the artist and 4A Centre for Contemporary Art, Sydney.<br>Image credit: Garry Trinh</p>"><img src="images/gallery/1.jpg" alt="Image 1" /></a>							
+							<div class="capt">
+								<h3>Lismore Regional Gallery forecourt 2</h3>
+								<p>Image credit: Rick Shearman 2</p>
+								<a href="#" class="zoom">Zoom</a>
+							</div>
+						</div>
+						<div class="item">
+							<a href="images/gallery/1.jpg" class="gallery" title="<h3><em>Survivor 3</em>, Dadang Christanto, 2009</h3><p>Performance at 4A Centre for Contemporary Asian Art, Sydney. Courtesy of the artist and 4A Centre for Contemporary Art, Sydney.<br>Image credit: Garry Trinh</p>"><img src="images/gallery/1.jpg" alt="Image 1" /></a>							
+							<div class="capt">
+								<h3>Lismore Regional Gallery forecourt 3</h3>
+								<p>Image credit: Rick Shearman 3</p>
+								<a href="#" class="zoom">Zoom</a>
+							</div>
+						</div>
+						<div class="item">
+							<a href="images/gallery/1.jpg" class="gallery" title="<h3><em>Survivor 2</em>, Dadang Christanto, 2009</h3><p>Performance at 4A Centre for Contemporary Asian Art, Sydney. Courtesy of the artist and 4A Centre for Contemporary Art, Sydney.<br>Image credit: Garry Trinh</p>"><img src="images/gallery/1.jpg" alt="Image 1" /></a>							
+							<div class="capt">
+								<h3>Lismore Regional Gallery forecourt 2</h3>
+								<p>Image credit: Rick Shearman 2</p>
+								<a href="#" class="zoom">Zoom</a>
+							</div>
+						</div>
+					</div>
+					<ul id="thumbs">
+						<li class="active"><a href="#"><img src="images/gallery/thumbs/2.jpg" alt="Thumb 1" /></a></li>
+						<li><a href="#"><img src="images/gallery/thumbs/1.jpg" alt="Thumb 1" /></a></li>
+						<li><a href="#"><img src="images/gallery/thumbs/1.jpg" alt="Thumb 1" /></a></li>
+						<li><a href="#"><img src="images/gallery/thumbs/1.jpg" alt="Thumb 1" /></a></li>
+						<li><a href="#"><img src="images/gallery/thumbs/1.jpg" alt="Thumb 1" /></a></li>
+						<li class="lst"><a href="#"><img src="images/gallery/thumbs/1.jpg" alt="Thumb 1" /></a></li>
+					</ul>
+				</div>
+				<div id="article" class="grid_6 lst">
+					<div class="social_media">
+						<img src="images/share.jpg" alt="Social Media Button" />
+					</div>
+					<h1>SURVIVOR: DADANG CHRISTANTO<br /><span>21 JULY – 26 AUGUST, GALLERY 3 AND 24:7</span></h1>
+					<p>Survivor is a major art project by contemporary Indonesian-Australian artist Dadang Christanto. Initially developed in 2008 as a live protest against an environmental disaster that occurred in East Java which saw hot volcanic mud wipe out 11 villages and destroy many lives, Survivor has since transgressed beyond cultural borders, evolving into a universal, multi-faceted reflection upon human survival and what it means to endure tragic historical events, loss and death.</p>
+					<p>Commencing with a single 2 hour performance at Lismore Regional Gallery, local volunteers occupy the gallery space in silent vigil, symbolically covered in mud and holding a photographic portraits of faces lost in the disaster. The performance is followed by a visual exhibition consisting of detritus from the performance, video and photographic documentation memorialising the catastrophe and its ongoing consequences.</p>
+					<p>"The entire history of a village – its livelihood and future is being buried under the mud. While Christanto's work is politically confronting, it is also a poetic experience that reminds us of human fragility and erasure in the face of disaster." Aaron Seeto, Curator.</p>
+					<p>Survivor is presented by Kultour in partnership with 4A Centre for Contemporary Asian Art and toured by Museums &amp; Galleries NSW. This exhibition is supported by the Contemporary Touring Initiative through Visions of Australia, an Australian Government program, and the Visual Arts and Craft Strategy, an initiative of the Australian Government and state and territory governments.</p>
+					<small>The tour of this exhibition has been assisted by an Incoming Touring Exhibition Grant. The Incoming Touring Exhibition Grant program is assisted by the NSW Government through Arts NSW and is managed by Museums &amp; Galleries NSW.</small>
+					<img src="images/logos.jpg" alt="Partner" />
+				</div>
+			</div>
+			<div class="articles_list h320 clearfix">
+				<h1 class="title">RELATED MEDIA</h1>
+				<div class="grid_3">
+					<a class="feature_image" href="#"><img src="images/exhibition.jpg" alt="Exhibition" /></a>
+					<h2>SURVIVOR PERFORMANCE DADANG CHRISTANTO</h2>
+					<p>Locals participate in the gallery's installation of Dadang Christanto's <em>Survivor</em>. Documentation of the performance will be displayed in the gallery next week.</p>
+					<a class="link" href="#">View the article</a>
+				</div>
+				<div class="grid_3">
+					<a class="feature_image" href="#"><img src="images/events.jpg" alt="Events" /></a>
+					<h2>BANANAS, BUSINESS &amp; BOCCE LEONIE LANE</h2>
+					<p>Leonie Lane's exhibition tells the stories of people who journeyed from Italy to Lismore to make a new life for themselves and their families. It reflects the heritage of…</p>
+					<a class="link" href="#">View the article</a>
+				</div>
+				<div class="grid_3">
+					<a class="feature_image" href="#"><img src="images/community-engagement.jpg" alt="Community Engagement" /></a>
+					<h2>BANANAS, BUSINESS &amp; BOCCE OPENING NIGHT</h2>
+					<p>The opening of Leonie Lane's <em>Bananas, Business and Bocce; The Lismore Italians</em> was a great success with representatives of all sectors of the community…</p>
+					<a class="link" href="#">View the article</a>
+				</div>
+				<div class="grid_3 lst">
+					<a class="feature_image" href="#"><img src="images/palate-at-the-gallery.jpg" alt="PALATE AT THE GALLERY" /></a>
+					<h2>BLISS<br />FIONA FOLEY</h2>
+					<p><em>Bliss</em> explores the hidden history of settler and Indigenous relations in Queensland, and in particular, the 1897 Aboriginals Protection and Restriction of the Sale of Opium…</p>
+					<a class="link" href="#">View the article</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer" class="clearfix">
+		<div class="container_12">
+			<div class="grid_12 clearfix">
+				<div class="ftop clearfix">
+					<h1 class="logo left"><a href="#"><img src="images/art/logo-small.gif" alt="Lismore Regional Gallery" /></a></h1>
+					<p class="address left">131 Molesworth St<br />Lismore NSW 2480<br />T: 61 2 6622 2209<br />F: 61 2 6622 2228<br /><a href="#">Email us</a></p>
+					<div class="entry left">
+						<h4>FREE ENTRY</h4>
+						<ul>
+							<li>Tuesday to Friday 10am - 4pm</li>
+							<li>Saturday and Sunday 10am - 2pm</li>
+							<li>Thursday 10am - 6pm</li>
+							<li>Closed Monday and Public Holidays</li>
+						</ul>
+					</div>
+					<div class="right">
+						<img src="images/partners.jpg" alt="Partners" />
+						<p>&copy; Lismore Regional Gallery &nbsp;&nbsp; Lismore Regional Gallery is a creative industries initiative of Lismore City Council</p>
+					</div>
+				</div>
+				<div class="fbottom clearfix">
+					<p class="left"><a class="fst" href="#">Accessibility</a> | <a href="#">Disclaimer</a> | <a href="#">Privacy policy</a> | <a href="#">Links policy</a> | <a href="#">Lismore City Council</a> | <a href="#">Copyright policy</a> | <a href="#">Feedback</a></p>
+					<p class="right">Site Design : RANGE</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
